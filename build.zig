@@ -1,4 +1,5 @@
 const std = @import("std");
+const builtin = @import("builtin");
 
 pub fn build(b: *std.build.Builder) void {
     // Standard release options allow the person running `zig build` to select
@@ -8,7 +9,6 @@ pub fn build(b: *std.build.Builder) void {
     const lib = b.addStaticLibrary("data_structures", "src/main.zig");
     lib.setBuildMode(mode);
     lib.install();
-
     const main_tests = b.addTest("src/main.zig");
     main_tests.setBuildMode(mode);
 
