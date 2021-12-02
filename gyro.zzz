@@ -1,0 +1,11 @@
+pkgs:
+  data-structures:
+    version: 0.0.1
+    description: "trying to learnning zig by write data structures"
+    license: Apache-2.0
+    source_url: "https://github.com/pathologyenigma/zig-data-structures"
+
+    root: src/main.zig
+    files:
+      README.md
+      LICENSE
