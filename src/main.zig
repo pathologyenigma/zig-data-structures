@@ -60,9 +60,9 @@ pub fn List(comptime T: type, allocator: *Allocator) type {
             }
             self.len += 1;
         }
-        fn find(self: *Self, data: *const T) bool {
+        fn find(self: *Self, data: T) bool {
             if (self.len == 0) return false;
-            return self.head.find(data);
+            return self.head.find(&data);
         }
         // fn insert_at(self: *Self, data: *T, ) !void{
 
@@ -81,5 +81,5 @@ test "push_front test" {
     defer list.deinit();
     try list.push_front(1);
     var a: u32 = 1;
-    try std.testing.expect(list.find(&a));
+    try std.testing.expect(list.find(a));
 }
